@@ -1,4 +1,5 @@
 import { PrismaClient } from "@repo/db/client";
+import { useBalance } from "@repo/store/useBalance";
 
 const client = new PrismaClient();
 
