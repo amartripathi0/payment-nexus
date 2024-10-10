@@ -7,7 +7,7 @@ import { RecoilRoot } from "recoil";
 export function Providers({ children }: { children: ReactNode }) {
   return (
     <RecoilRoot>
-      <SessionProvider>{children}</SessionProvider>{" "}
+      <SessionProvider>{children}</SessionProvider>
     </RecoilRoot>
   );
 }
