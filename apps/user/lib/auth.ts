@@ -15,37 +15,39 @@ export const authOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials: any) {
-        const hashedPassword = await bcrypt.hash(credentials.password, 10);
-        const existingUser = await db.user.findFirst({
-          where: {
-            number: credentials.phone,
-          },
-        });
-
-        if (existingUser) {
-          const passwordValidation = await bcrypt.compare(
-            credentials.password,
-            existingUser.password
-          );
-          if (passwordValidation) {
-            return {
-              id: existingUser.id.toString(),
-              name: existingUser.name,
-              email: existingUser.number,
-            };
-          }
-          return null;
-        }
-
         try {
+          console.log("g");
+
+          const hashedPassword = await bcrypt.hash(credentials.password, 10);
+          const existingUser = await db.user.findFirst({
+            where: {
+              number: credentials.phone,
+            },
+          });
+          console.log(existingUser);
+          if (existingUser) {
+            const passwordValidation = await bcrypt.compare(
+              credentials.password,
+              existingUser.password
+            );
+            if (passwordValidation) {
+              return {
+                id: existingUser.id.toString(),
+                name: existingUser.name,
+                email: existingUser.number,
+              };
+            }
+            return null;
+          }
+
           const user = await db.user.create({
             data: {
               number: credentials.phone,
               password: hashedPassword,
             },
           });
-          console.log("user" , user);
-          
+          console.log("user", user);
+
           return {
             id: user.id.toString(),
             name: user.name,
