@@ -8,11 +8,11 @@ import { Button } from "./ui/button";
 import { cn } from "@ui/lib/utils";
 
 const sidebarItems = [
-  { name: "Home", href: "/", icon: Home },
-  { name: "Transfer", href: "/transfer", icon: Send },
-  { name: "Transactions", href: "/transactions", icon: FileText },
-  { name: "Analytics", href: "/analytics", icon: PieChart },
-  { name: "Settings", href: "/settings", icon: Settings },
+  { name: "Home", href: "/dashboard", icon: Home },
+  { name: "Transfer", href: "/dashboard/transfer", icon: Send },
+  { name: "Transactions", href: "/dashboard/transactions", icon: FileText },
+  { name: "Analytics", href: "/dashboard/analytics", icon: PieChart },
+  { name: "Settings", href: "/dashboard/settings", icon: Settings },
 ];
 
 export default function Sidebar() {
