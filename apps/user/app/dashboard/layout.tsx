@@ -1,4 +1,5 @@
 import Navbar from "@repo/ui/components/navbar";
+import Sidebar from "@repo/ui/components/sidebar";
 
 export default function DashboardLayout({
   children,
@@ -7,7 +8,7 @@ export default function DashboardLayout({
 }) {
   return (
         <div className="flex h-screen overflow-hidden w-screen">
-          {/* <Sidebar /> */}
+          <Sidebar />
           <div className="flex flex-col flex-1 overflow-hidden">
             <Navbar />
             <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50">
