@@ -51,7 +51,6 @@ async function main() {
       },
     },
   });
-  console.log({ yale, john });
 }
 main()
   .then(async () => {
